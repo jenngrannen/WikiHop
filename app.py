@@ -1,5 +1,5 @@
 from Wikihop import *
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request, redirect
 app = Flask(__name__)
 
 @app.route("/")
@@ -17,3 +17,7 @@ def search():
     if list == None:
         return render_template("noPath.html")
     return render_template("results.html", list=list)
+
+@app.route("/back", methods=["POST"])
+def back():
+    return redirect(url_for('index'))
