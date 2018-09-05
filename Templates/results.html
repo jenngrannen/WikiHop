@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<ul>
+    {% for link in list %}
+    <li>{{ link }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

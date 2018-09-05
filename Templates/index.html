@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <h1> Hi </h1>
+  <form action="/wikihop" method="post">
+
+    <h4>Start URL</h4>
+    <input name="startURL" type="text" placeholder="Search..">
+    <br/><br/>
+
+    <h4>End URL</h4>
+    <input name="endURL" type="text" placeholder="Search..">
+    <br/><br/>
+
+    <h4>Depth of Search</h4>
+    <select name="depth">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+    <br/><br/><br/>
+    <input type="submit" value="WikiHop"/>
+  </form>
+{% endblock %}

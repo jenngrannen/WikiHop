@@ -59,10 +59,10 @@ def getFinalLinks(start):
     list = convertListObjects(list, start)
     return list
 
-def runIt(startURL, endURL):
+def runIt(startURL, endURL, depth):
     list = [LinkClass(startURL, None)]
     count = 0
-    while not check(list, endURL) and count < 5:
+    while not check(list, endURL) and count < depth:
         tempList = []
         for l in list:
             tempList.extend(getFinalLinks(l))
@@ -79,8 +79,7 @@ def runIt(startURL, endURL):
         return path[::-1]
     return None
 
-
-
-starturl = "https://en.wikipedia.org/wiki/Manu_propria"
+"""starturl = "https://en.wikipedia.org/wiki/Manu_propria"
 endurl = "https://en.wikipedia.org/wiki/Roman_Republic"
 print(runIt(starturl, endurl))
+"""
